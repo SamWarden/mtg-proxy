@@ -1,0 +1,11 @@
+version: "3.9"
+
+services:
+  mtg-proxy:
+    image: nineseconds/mtg:2
+    container_name: mtg-proxy
+    restart: unless-stopped
+    ports:
+      - "3128:3128"
+    volumes:
+      - ./config.toml:/config.toml:ro
